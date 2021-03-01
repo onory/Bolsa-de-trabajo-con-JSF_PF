@@ -1,0 +1,27 @@
+<!--
+h:commandLink action="index" redireccion a index.xhtml noe s necesario mencionar la extencion
+-->
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Fallo</title>
+    </h:head>
+    <h:body>
+        <!-- aplicamos la plantilla de facelets -->
+
+        <ui:composition template="./WEB-INF/plantillas/plantilla.xhtml">
+            <!-- re-define el contenido por los estilos de la plantilla -->
+            <ui:define name="content"> 
+                <h:form>
+                    Lo siento #{candidato.nombre}, no hay vacantes por el momento
+                    <br/>
+                    <h:commandLink action="index">Regresar</h:commandLink>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
